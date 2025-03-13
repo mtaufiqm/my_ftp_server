@@ -26,9 +26,16 @@ Future<void> main(List<String> arguments) async {
     ftpPass = authMap["password"];
   });
 
+  var sharedDir = "";
+  if(Platform.isWindows){
+    sharedDir = "shared_dir";
+  } else if(Platform.isLinux){
+    sharedDir = "/opt/shared_dir/";
+  }
+
   FtpServer ftpServer = FtpServer(
     21, 
-    sharedDirectories: ["shared_dir"],
+    sharedDirectories: [sharedDir],
     serverType: ServerType.readAndWrite,
     username: ftpUser,
     password: ftpPass,

@@ -1,0 +1,16 @@
+name: my_ftp_server
+description: A simple command-line application.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.6.0
+
+# Add regular dependencies here.
+dependencies:
+  postgres: 3.5.4
+  ftp_server: 1.0.7
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^5.0.0

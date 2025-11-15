@@ -6,9 +6,9 @@ import "package:ftp_server/server_type.dart";
 import "package:postgres/postgres.dart";
 Future<void> main(List<String> arguments) async {
   String host = Platform.environment["dbhost"]??"localhost";
-  String databaseName = Platform.environment["dbname"]??"myapp";
+  String databaseName = Platform.environment["dbname"]??"MY_DBNAME";
   String user = Platform.environment["dbuser"]??"postgres";
-  String password = Platform.environment["dbpassword"]??"taufiq1729";
+  String password = Platform.environment["dbpassword"]??"MY_PASSWORD";
   Endpoint endpoint = Endpoint(host: host, database: databaseName,username: user,password: password);
   Pool connPool = Pool.withEndpoints([endpoint],settings: PoolSettings(
     maxConnectionCount: 3,
